@@ -6,19 +6,12 @@ from skimage import io
 from tensorflow.keras.preprocessing import image
 from flask import Flask, redirect, url_for, request, render_template
 from werkzeug.utils import secure_filename
-from gevent.pywsgi import WSGIServer
 
 # Define a flask app
 app = Flask(__name__)
 
-# Model saved with Keras model.save()
-
-# You can also use pretrained model from Keras
-# Check https://keras.io/applications/
 
 model =tf.keras.models.load_model('PlantDNet.h5',compile=False)
-print('Model loaded. Check http://127.0.0.1:5000/')
-
 
 def predict_model(img_path, model):
     img = image.load_img(img_path, grayscale=False, target_size=(64, 64))
@@ -67,9 +60,4 @@ def upload():
 
 
 if __name__ == '__main__':
-    # app.run(port=5002, debug=True)
-
-    # Serve the app with gevent
-    http_server = WSGIServer(('',5000), app)
-    http_server.serve_forever()
-    app.run()
+     app.run(port=5002, debug=True)
