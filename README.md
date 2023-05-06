@@ -7,8 +7,11 @@ Plan of the Project:
 Model Creation
 
 Data Collection: Collection of the Required Plant Disease Data which we will use to train and test our Machine Learning Model.
+
 Data Preprocessing:Data Preprocessing can be done by Data Cleaning , Data Transformation and Data Reduction.
-Data Cleaning: Found the missing data and filled it, unnecessary data will be removed and the data with the noise will be removed by regression or clustering
+
+Data Cleaning: Found the missing data and filled it, unnecessary data will be removed and the data with the noise will be removed by regression or clustering.
+
 Data Transformation: In this we are transforming the data using Batch-Normalisation.
 Data reduction:Reduce the data based on aggregation.
 Extracting the Features and Training the Data:
